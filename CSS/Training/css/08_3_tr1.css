@@ -1,0 +1,32 @@
+.span_1 {
+    font-weight: 900;
+}
+.span_2 {
+    font-style: italic;
+}
+div {
+    border: 1px solid #222;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-style: dotted;
+    width: 600px;
+    margin: 0 auto;
+}
+.container_1 {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+.container_2 {
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+ul {
+    list-style-type: decimal;
+}
+table, th, td {
+    border:1px solid rgb(196, 186, 186);
+    border-collapse: collapse;
+}
+th, td {
+    padding:10px 20px;
+}

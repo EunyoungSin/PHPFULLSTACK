@@ -1,0 +1,22 @@
+table, th, td {
+    border:1px solid #222;
+    border-collapse: collapse;
+}
+th, td {
+    padding:10px;
+}
+h1 {
+    border: 3px solid #ffa500;
+    color: rgb(255, 0, 0);
+    display: inline-block;
+}
+h2 {
+    border: 3px solid #ffa500;
+    color: #0000ff;
+    display: inline-block;
+}
+ol {
+    border: 3px solid #ffa500;
+    color: rgb(41, 161, 41);
+    display: inline-block;
+}

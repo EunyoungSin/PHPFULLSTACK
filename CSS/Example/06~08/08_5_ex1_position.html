@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main, section, article {
+            padding: 20px
+        }
+        main {
+            background-color: dodgerblue;
+            height: 1200px;
+        }
+        section {
+            background-color: aquamarine;
+            position: relative;
+        }
+        article {
+            background-color: cadetblue;
+
+        }
+        .div_static {
+            background-color: aliceblue;
+        }
+        .div_relative {
+            background-color: yellow;
+            /* position: relative;
+            left: -30px; */
+        }
+        .div_absolute {
+            background-color: greenyellow;
+            position: absolute;
+            top: 30px;
+        }
+        .div_fixed {
+            background-color: orange;
+            /* position: fixed;
+            bottom: 10%;
+            right: 10%; */
+        }
+        .div_sticky {
+            background-color: rebeccapurple; 
+            position: sticky;
+            top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        main
+        <section>
+            section
+            <article>
+                article
+                <div class="div_static">static</div>
+                <div class="div_relative">relative</div>
+                <div class="div_absolute">absolute</div>
+                <div class="div_fixed">fixed</div>
+                <div class="div_sticky">sticky</div>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

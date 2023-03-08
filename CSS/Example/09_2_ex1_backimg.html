@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div_img {
+            background-image: url('./img/music.jpg'), url('../Training/apple.PNG');
+            width: 500px;
+            height: 500px;
+        }
+        .div_repeat {
+            border: 2px solid black;
+            background-image: url('../Training/apple.PNG');
+            width: 500px;
+            height: 500px;
+            background-repeat: repeat-y;
+        }
+        /* body {
+            background-image: url('../Training/apple.PNG');
+        } */
+        .div_position {
+            border: 2px solid black;
+            background-image: url('../Training/apple.PNG');
+            width: 500px;
+            height: 300px;
+            background-repeat: repeat-y;
+            background-position: 10% 50%;
+            background-size: cover;
+        }
+
+        .at_img {
+            background-image: url('./img/music.jpg');
+            width: 150px;
+            height: 200px;
+            display: inline-block;
+            border: 1px solid black;
+            overflow: scroll;
+            background-size: 80$;
+        }
+
+        .div_img_scroll {
+            background-attachment: scroll;
+        }
+
+        .div_img_fixed {
+            background-attachment: fixed;
+        }
+
+        .div_img_local {
+            background-attachment: local;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1>background-image</h1>
+    <div class="div_img">음악</div> -->
+
+    <!-- <h1>background-repeat</h1>
+    <div class="div_repeat"></div> -->
+
+    <!-- <h1>background-pisition</h1>
+    <div class="div_position"></div> -->
+
+    <div class="div_img_scroll at_img">
+    가나다라마바사아자차카타파하 가나다라마바사아자차카타파하 가나다라마바사아자차카타파하 가나다라마바사아자차카타파하 가나다라마바사아자차카타파하 가나다라마바사아자차카타파하 가나다라마바사아자차카타파하 
+    </div>
+
+    <div class="div_img_fixed at_img">
+    가나다라마바사아자차카타파하 가나다라마바사아자차카타파하 가나다라마바사아자차카타파하 가나다라마바사아자차카타파하 가나다라마바사아자차카타파하 가나다라마바사아자차카타파하 가나다라마바사아자차카타파하 
+    </div>
+
+    <div class="div_img_local at_img">
+    가나다라마바사아자차카타파하 가나다라마바사아자차카타파하 가나다라마바사아자차카타파하 가나다라마바사아자차카타파하 가나다라마바사아자차카타파하 가나다라마바사아자차카타파하 가나다라마바사아자차카타파하 
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            position: static;
+            width: 650px;
+            height: 650px;
+            border: 1px solid black;
+        }
+        .p_1 {
+            position: static;
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+        }
+        .p_2 {
+            position: relative;
+            left: 2%;
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+        }
+        .p_3 {
+            position: relative;
+            left: 5%;
+            top: -50px;
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+        }
+        .fixed {
+            position: fixed;
+            right: 23%;
+            top: 2%;
+            border: 1px solid black;
+            background-color: black;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <p class="p_1">
+            Ex et adipiscing voluptate aliqua cupidatat nulla. 
+            Laboris est sint sit aliqua enim. Aute Lorem eu sint
+        </p>
+        <p class="p_2">
+            Lorem ipsum reprehenderit adipisicing exercitation enim velit
+            veniam incididunt sit consectetur elit exercitation. Magna Lorem
+        </p>
+        <p class="p_3">
+            Excepteur voluptate ada irure ipsum duis. Deserunt cupidatat 
+            commodo proident eu mollit cillum commodo quis quis et ad. Velit 
+        </p>
+        <p class="fixed"></p>
+    </div>
+</body>
+</html>

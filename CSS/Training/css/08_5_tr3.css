@@ -1,0 +1,21 @@
+section {
+    width: 800px;
+    margin: 0 auto;
+}
+article {
+    border: 1px dotted #ccc;
+    width: 350px;
+    height: 200px;
+    margin: 10px;
+    padding: 10px;
+    float: left;
+    font-size: 0.8em;
+}
+footer {
+    clear: both;
+    color: white;
+    background-color: black;
+    text-align: center;
+    width: 800px;
+    padding: 10px;
+}

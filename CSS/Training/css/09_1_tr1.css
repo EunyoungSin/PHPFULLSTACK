@@ -1,0 +1,22 @@
+body {
+    background-image: url(../apple.PNG);
+    background-repeat: repeat;
+    background-size: cover;
+    margin : 0
+}
+
+.div_1 {
+    color: white;
+    background-color: gray;
+    padding: 20px 15px;
+    width: 100%;
+    height: 10em;
+}
+
+span {
+    font-weight: 900
+}
+
+.span_1 {
+    font-size: large
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [target] {
+            color: green;
+        }
+
+
+        [class=att_class] {
+            color: red;
+        }
+
+        [class~=att] {
+            color: aqua;
+        }
+
+        [class |=att2] {
+            color: coral;
+        }
+
+        [class ^= co] {
+            color: brown;
+        }
+
+        [class *= co] {
+            color: cyan;
+        }
+        
+        #cook {
+            color: bisque;
+        }
+
+        [class $= bk] {
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://naver.com" target="_blank">네이버</a>
+    <br>
+    <h2 class="att_class">[속성명=속성값]</h2>
+    <h2 class="att_class2 att">[속성명~=속성값]</h2>
+    <h2 class="att2">[속성명|=속성값]1</h2>
+    <h2 class="att2-h2">[속성명|=속성값]2</h2>
+    <h2 class="cook" id="cook">[속성명^=속성값]</h2>
+    <h2 class="bk_cook">[속성명^=속성값]</h2>
+    <h2 class="ok_bk">[속성명$=속성값]</h2>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset {
+    width: 500px;
+    height: 400px;
+    background-image: url(../apple.PNG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+}
+
+legend {
+    color: magenta;
+    font-size: xx-large;
+    font-weight: 900;
+}
+
+ul{
+    padding: 0;
+}
+
+li {
+    font-weight: 900;
+    font-size: large;
+    list-style-type: none;
+}
+
+input {
+    background-color: transparent;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid white;
+}
+
+#request {
+    vertical-align: top;
+}
+
+input:checked + label {
+    color: red;
+    font-weight: bold;
+}
+
+label.name::before {
+    content: '*';
+    color: red;
+}
+
+div {
+    display: none;
+}
+
+button:hover + div {
+    position: absolute;
+    left: 90px;
+    top: 380px;
+    color: white;
+    background-color: black;
+    font-size: larger;
+    font-weight: 900;
+    display: inline-block;
+}

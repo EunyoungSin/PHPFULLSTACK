@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+            :link
+            :visited
+            :hover
+            :active
+            :focus
+        */
+
+        a:link {
+            color: plum;
+        }
+
+        a:visited {
+            color: palevioletred;
+        }
+        a:hover {
+            background-color: crimson;
+        }
+        nav ul li {
+            list-style-type: none;
+            background-color: #ccc;
+            float: left;
+            text-align: center;
+            width: 70px;
+            height: 20px;
+            padding: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        input:focus {
+            outline: none;
+            border: 3px solid blueviolet;
+        }
+
+        a:active {
+            background-color: aquamarine;
+        }
+
+        #target_1:target {
+            background-color: burlywood;
+        }
+        
+        .container :nth-child(1) {
+            background-color: yellow;
+        }
+
+        .container :nth-of-type(2) {
+            background-color: aquamarine;
+        }
+
+        .container :not(h2) {
+            background-color: pink;
+        }
+
+        .container_2 .pf_1::first-letter {
+            background-color: cornflowerblue;
+        }
+
+        .container_2 .pf_2::first-line {
+            background-color: lavender;
+        }
+
+        .pf_1 > span::before {
+            content: '중요';
+            color: blueviolet;
+        }
+
+        .pf_2 > span::after {
+            content: '중요';
+            color: blueviolet;
+        }
+
+        .container_2 p::selection {
+            background-color: beige;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>가상 요소</legend>
+        <div class="container_2">
+            <h2>h2_1</h2>
+            <p class="pf_1">문명이 출현하면서 <span>사회집단</span> 또는 가나다라마바사아자차카타파하 데이터베이스를 어쩌구저쩌구 가나다라마바사아자차카타파하 가나다라마바사아자차카타파하 가나다라마바사아자차카타파하 가나다라마바사아자차카타파하 가나다라마바사아자차카타파하</p>
+            <p class="pf_2">문명이 출현하면서 <span>사회집단</span> 또는 가나다라마바사아자차카타파하 데이터베이스를 어쩌구저쩌구 가나다라마바사아자차카타파하 가나다라마바사아자차카타파하 가나다라마바사아자차카타파하 가나다라마바사아자차카타파하 가나다라마바사아자차카타파하</p>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>구조 가상 클래스</legend>
+        <div class="container">
+            <h2>h2_1</h2>
+            <p>p_1</p>
+            <p>p_2</p>
+            <h2>h2_1</h2>
+            <p>p_3</p>
+        </div>
+    </fieldset>
+
+    <a href="https://daum.net">다음</a>
+    <a href="https://naver.com">네이버</a>
+<br>
+
+<nav>
+    <ul>
+        <li><a href="#target_1">메뉴1</a></li>
+        <li><a href="#">메뉴2</a></li>
+        <li><a href="#">메뉴3</a></li>
+        <li><a href="#">메뉴4</a></li>
+        <li><a href="#">메뉴5</a></li>
+    </ul>
+</nav>
+<br><br><br><br>
+<span id="target_1">target 테스트</span>
+<br><br>
+    <label for="input_1">이름</label>
+    <input type="text" id="input_1">
+</body>
+</html>
+</body>
+</html>

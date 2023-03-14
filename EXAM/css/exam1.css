@@ -1,0 +1,101 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body
+{
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.hero {
+    min-height: 45vh;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+h1, article, a[href="#breweries"] {
+    color: white;
+    flex: 1;
+}
+
+h1 {
+    margin: 0;
+    width: 100vw;
+    height: 1vh;
+    padding: 0px 20px;
+    font-size: xxx-large;
+}
+
+article > p {
+    width: 50vw;
+    padding: 20px;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    background-color: goldenrod;
+    width: 120px;
+    height: 20px;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+}
+
+article > a {
+    margin: 20px;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: center;
+}
+
+li {
+    margin: 20px;
+    padding: 21px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    max-width: 15vw;
+    min-width: 15vh;
+}
+
+figure {
+    margin: 0 auto;
+    position: relative;
+}
+
+img {
+    max-width: 15vw;
+    min-width: 15vw;
+    border-radius: 10px;
+}
+
+figcaption > h3 {
+    background-color: black;
+    opacity: 0.8;
+    color: white;
+    position: absolute;
+    bottom: -15px;
+    width: 14vw;
+    padding: 0.5vw;
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100vw;
+    text-align: center;
+    background-color: black;
+    color: white;
+}

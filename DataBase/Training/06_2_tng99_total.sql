@@ -244,7 +244,7 @@ VALUES
 	,DATE(99990101)
 );
 
-SELECT *
+SELECT *\\
 FROM dept_manager
 WHERE emp_no = 500000;
 

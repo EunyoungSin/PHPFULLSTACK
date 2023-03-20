@@ -39,7 +39,7 @@ ORDER BY sal.salary desc
 LIMIT 10;
 
 --6.
-SELECT dep.dept_name, CONCAT(first_name, ' ' , last_name) fullname, hire_date
+SELECT dep.dept_name, CONCAT(first_name, ' ' , last_name) fullname, emp.hire_date
 FROM employees emp
 	INNER JOIN dept_manager dept
 		ON emp.emp_no = dept.emp_no
@@ -63,13 +63,13 @@ FROM employees emp
 		ON emp.emp_no = dep.emp_no;
 
 --9.
-SELECT tit.title, TRUNCATE(AVG(sal.salary),0)
+SELECT tit.title, TRUNCATE(AVG(sal.salary),0) avg_s
 FROM salaries sal
 	INNER JOIN titles tit
 		ON sal.emp_no = tit.emp_no
 WHERE sal.to_date >= NOW() AND tit.to_date >= NOW()
 GROUP BY tit.title
-HAVING AVG(sal.salary) >= 60000
+HAVING avg_s >= 60000
 ORDER BY TRUNCATE(AVG(sal.salary), 0) DESC;
 
 --10.

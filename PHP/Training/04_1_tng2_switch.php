@@ -1,6 +1,6 @@
 <?php
 
-$num = 100;
+$num = 0;
 $your = "당신의 점수는 ";
 $is = "점 입니다.";
 $g_a_plus = "<A+>";
@@ -12,7 +12,7 @@ $g_f = "<F>";
 $g_else = "잘못된 값을 입력 했습니다.";
 
 switch ($num) {
-    case 0 > $num || $num > 100:
+    case $num < 0 || $num > 100:
         echo $g_else;
         break;
     default:
@@ -32,7 +32,7 @@ switch ($num) {
             case 60:
                 $grade = $g_d;
                 break;
-            case 59:
+            default:
                 $grade = $g_f;
                 break;
             }

@@ -16,5 +16,5 @@
 echo $arr_ass_del["비빔밥"];
 
 unset($arr_ass_del["김치"]);
-var_dump($arr_ass_del); fff
+var_dump($arr_ass_del); ff
 ?>

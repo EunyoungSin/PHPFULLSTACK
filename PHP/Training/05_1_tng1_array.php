@@ -6,6 +6,7 @@
     //$rand_num = rand(0,5);
     //echo $food[$rand_num];
 
+    /*
     $arr_food = array("샐러드" => "양상추", "도너츠" => "밀가루", "파전" => "파", "커피" => "원두");
     echo $arr_food["샐러드"];
 
@@ -16,5 +17,22 @@
 echo $arr_ass_del["비빔밥"];
 
 unset($arr_ass_del["김치"]);
-var_dump($arr_ass_del); ff
+var_dump($arr_ass_del); */
+
+$arr_ass_del = array("된장찌개" => "파"
+, "볶음밥" => "양파"
+, "삭제" => "값값"
+, "김치" => "마늘"
+, "비빔밥" => "참기름");
+
+foreach( $arr_ass_del as $key => $val ) {
+    if ($key !== "삭제") {
+        echo $key." : ".$val."\n";
+    }
+    else if($key == "삭제") {
+        unset($arr_ass_del[$key]);
+        var_dump($arr_ass_del);
+    }
+}
+
 ?>

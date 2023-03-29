@@ -26,12 +26,11 @@ $arr_ass_del = array("된장찌개" => "파"
 , "비빔밥" => "참기름");
 
 foreach( $arr_ass_del as $key => $val ) {
-    if ($key !== "삭제") {
-        echo $key." : ".$val."\n";
-    }
-    else if($key == "삭제") {
+    if ($key == "삭제") {
         unset($arr_ass_del[$key]);
-        var_dump($arr_ass_del);
+    }
+    else {
+        echo $key." : ".$val."\n";
     }
 }
 

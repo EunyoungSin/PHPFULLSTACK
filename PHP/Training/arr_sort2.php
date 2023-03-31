@@ -60,6 +60,14 @@ function my_min($array)
 
 my_min($arr); */
 
-
+for ( $dan=2; $dan <= 2; $dan++ )
+{
+    echo $dan, "단\n";
+    for ( $num = 1; $num <= 9; $num++ )
+    {
+        $result = $dan." * ".$num." = ".$dan*$num."\n";
+        echo $result;
+    }
+}
 
 ?>

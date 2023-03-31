@@ -1,7 +1,8 @@
 <?php
-for ( $i = 1; $i < 7; $i++ )
-    {
-        echo mt_rand(1, 45),"\n";
-    }
+
+$temp = range(1,45);
+shuffle($temp);
+$data = array_slice($temp,0,6);
+print_r($data);
 
 ?>

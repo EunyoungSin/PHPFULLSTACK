@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Schedule Management</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2 {
+            margin-top: 0;
+        }
+
+        form {
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="time"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 3px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"],
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        thead th {
+            background-color: #ddd;
+            font-weight: bold;
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        tbody td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        tbody td:last-child {
+            text-align: right;
+        }
+
+        tbody button {
+            background-color: #ddd;
+            color: #333;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Schedule Management</h1>
+
+        <form>
+            <h2>Add New Schedule</h2>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required>
+            <label for="description">Description:</label>
+            <textarea id="description" name="description"></textarea>
+            <button type="submit">Add</button>
+        </form>
+
+        <hr>
+
+        <h2>Schedule List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Description</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Meeting with client</td>
+                    <td>2023-04-03</td>
+                    <td>10:00</td>
+                    <td>Discuss project requirements</td>
+                    <td><button>Edit</button><button>Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Team lunch</td>
+                    <td>2023-04-05</td>
+                    <td>12:30</td>
+                    <td>Discuss project progress</td>
+                    <td><button>Edit</button><button>Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

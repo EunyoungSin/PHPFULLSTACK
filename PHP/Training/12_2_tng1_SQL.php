@@ -1,4 +1,7 @@
 <?php
+// v001 emp_no
+// v002 where do
+
 include_once("../Example/12_2_ex2_fnc_db_conn.php");
 
 my_db_conn( $obj_conn );
@@ -10,15 +13,16 @@ my_db_conn( $obj_conn );
     ." FROM "
     ."  salaries "
     ." WHERE "
-    ." to_date >= NOW(); ";
+    ." to_date >= NOW() ";
 
-$stmt = $obj_conn->prepare( $sql );
-$stmt->execute();
+$stmt = $obj_conn->query( $sql );
 $result = $stmt->fetchAll();
 
 foreach ($result as $val) {
     echo "전체 월급의 평균 : ".$val['avg'];
 }
+
+var_dump( $result );
 
 $obj_conn = null; */
 
@@ -62,10 +66,40 @@ $sql =
     " UPDATE "
     ." employees "
     ." SET "
-    ."  ,:first_name "
-    ."  ,:last_name "
+    ."  first_name = :first_name "
+    ."  ,last_name = :last_name "
     ." WHERE "
-    ." emp_no = 500000 ";
+    ." emp_no = 499999 ";
 
+$arr_prepare = 
+array(
+    ":first_name" => "길동"
+    ,":last_name" => "홍"
+);
 
+$stmt = $obj_conn->prepare( $sql );
+$stmt->execute( $arr_prepare );
+$obj_conn->commit();
+
+$obj_conn = null;
+
+// 4.
+/* $sql =
+    " DELETE "
+    ." FROM "
+    ." employees "
+    ." WHERE "
+    ." emp_no = :emp_no "; // v001 del
+    ." hire_date <= now() " // v002 add
+
+$arr_prepare = 
+array(
+    ":emp_no" => 500000
+);    
+
+$stmt = $obj_conn->prepare( $sql );
+$stmt->execute( $arr_prepare );
+$obj_conn->commit();
+
+$obj_conn = null; */
 ?>

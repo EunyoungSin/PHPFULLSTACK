@@ -2,126 +2,173 @@
 //블랙잭 게임
 //-카드 숫자를 합쳐 가능한 21에 가깝게 만들면 이기는 게임
 
-// 1. 게임 시작시 유저와 딜러는 카드를 2개 받는다.
+//1. 게임 시작시 유저와 딜러는 카드를 2개 받는다.
 // 1-1. 이때 유저 또는 딜러의 카드 합이 21이면 결과 출력
-// 2. 카드 합이 21을 초과하면 패배
+//2. 카드 합이 21을 초과하면 패배
 // 2-1. 유저 또는 딜러의 카드의 합이 21이 넘으면 결과 바로 출력
-// 4. 카드의 계산은 아래의 규칙을 따른다.
-// 4-1.카드 2~10은 그 숫자대로 점수
-// 4-2. K·Q·J는 10점
+//4. 카드의 계산은 아래의 규칙을 따른다.
+// 4-1.카드 2~9는 그 숫자대로 점수
+// 4-2. K·Q·J,10은 10점
 // 4-3. A는 1점 또는 11점 둘 중의 하나로 계산
-// 5. 카드의 합이 같으면 다음의 규칙에 따름
+//5. 카드의 합이 같으면 다음의 규칙에 따름
 // 5-1. 카드수가 적은 쪽이 승리
-// 5-2. 카드수가 같을경우 드로우
-// 6. 유저가 카드를 받을 때 딜러는 아래의 규칙을 따른다.
-// 6-1. 딜러는 카드의 합이 17보다 낮을 경우 카드를 더 받음
-// 6-2. 17 이상일 경우는 받지 않는다.
-// 7. 1입력 : 카드 더받기, 2입력 : 카드비교, 0입력 : 게임종료
-// 8. 한 번 사용한 카드는 다시 쓸 수 없다.
+// 5-2. 카드수가 같을경우 비긴다.
 
-// while(true) {
-// 	echo '시작';
-// 	print "\n";
-// 	fscanf(STDIN, "%d\n", $input);        
-// 	if($input === 0) {
-// 		break;
-// 	}
-// 	echo $input;
-// 	print "\n";
-// }
-// echo "끝!\n";
-
-
-class Blackjack {
-    private $deck;  // 카드 덱
-    private $player;  // 유저
-    private $dealer;  // 딜러
-    private $winner;  // 승자
-    
-    public function __construct() {
-    $this->deck = array();
-    $this->player = array();
-    $this->dealer = array();
-    $this->winner = null;
-    
-    // 카드 덱 초기화
-    $suits = array('spades', 'hearts', 'clubs', 'diamonds');
-    $ranks = array('2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A');
-    foreach ($suits as $suit) {
-    foreach ($ranks as $rank) {
-        $this->deck[] = array('suit' => $suit, 'rank' => $rank);
-    }
-    }
-}
-
-public function start() {
-    // 카드 덱 섞기
-    shuffle($this->deck);
-    
-    // 유저와 딜러가 카드 2장씩 받음
-    for ($i = 0; $i < 2; $i++) {
-    $this->player[] = array_shift($this->deck);
-    $this->dealer[] = array_shift($this->deck);
-    }
-    
-    // 카드 합이 21인지 확인
-    if ($this->calculateHand($this->player) == 21 || $this->calculateHand($this->dealer) == 21) {
-    $this->winner = ($this->calculateHand($this->player) == 21) ? 'player' : 'dealer';
-    $this->end();
-    return;
-    }
-}
-
-public function hit() {
-    // 유저가 카드를 더 받음
-    $this->player[] = array_shift($this->deck);
-    
-    // 카드 합이 21을 초과하면 딜러가 이김
-    if ($this->calculateHand($this->player) > 21) {
-    $this->winner = 'dealer';
-    $this->end();
-    return;
-    }
-}
-
-public function stand() {
-    // 딜러의 카드 합이 17 이상이 될 때까지 카드 더 받기
-    while ($this->calculateHand($this->dealer) < 17) {
-    $this->dealer[] = array_shift($this->deck);
-    }
-    
-    // 카드 합이 21을 초과하면 유저가 이김
-    if ($this->calculateHand($this->dealer) > 21) {
-    $this->winner = 'player';
-    } else {
-    // 카드 합이 같으면 카드 수가 적은 쪽이 이김, 같으면 드로우
-    $playerHand = $this->calculateHand($this->player);
-    $dealerHand = $this->calculateHand($this->dealer);
-    if ($playerHand == $dealerHand) {
-        $this->winner = (count($this->player) < count($this->dealer)) ? 'player' : ((count($this->dealer) < count($this->player)) ?
-
-        // 카드 합이 21을 초과하지 않으면, 카드 합이 더 높은 쪽이 이김
-if ($this->calculateHand($this->player) <= 21 && ($this->calculateHand($this->dealer) < $this->calculateHand($this->player) || $this->calculateHand($this->dealer) > 21))
+class BlackJack
 {
-$this->winner = 'player';
-}
-else {
-$this->winner = 'dealer';
-}
-}
+	private $arr_num;
+	private $arr_shape;
+	private $arr_deck;
+	private $user_cards;
+    private $dealer_cards;
+    private $used_cards;
 
-// 게임 결과 출력
-public function printResult() {
-if ($this->winner == 'player') {
-echo "You win!\n";
-} else if ($this->winner == 'dealer') {
-echo "Dealer wins!\n";
-} else {
-echo "It's a draw!\n";
-}
-}
-    
+	// construct
+	public function __construct()
+	{
+		$this->arr_num = array( "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K");
+		$this->arr_shape = array("♠", "♣", "◆", "♥");
+		$this->set_deck();
+	}
+
+	// set
+	private function set_deck()
+	{
+		// 카드 52장 덱에 셋팅
+		foreach( $this->arr_shape as $shape )
+		{
+			foreach( $this->arr_num as $num )
+			{
+				$this->arr_deck[] = $num.$shape;
+			}
+		}
+		// 덱 셔플
+		shuffle( $this->arr_deck );
+	}
+
+	// 카드 뽑기
+    private function draw_card()
+    {
+        $card = array_shift( $this->arr_deck );
+        $this->used_cards[] = $card;
+        return $card;
+    }
+
+    // 카드 합 계산
+    private function calculate_score( $cards )
+    {
+        $score = 0;
+        $num_of_ace = 0;
+
+        foreach( $cards as $card )
+        {
+            $num = substr( $card, 0, -3 );
+            if( $num == 'A' )
+            {
+                $num_of_ace++;
+                $score += 11;
+            }
+            else if( $num == 'K' || $num == 'Q' || $num == 'J' || $num == '10' )
+            {
+                $score += 10;
+            }
+            else
+            {
+                $score += intval( $num );
+            }
+        }
+
+        while( $score > 21 && $num_of_ace > 0 )
+        {
+            $score -= 10;
+            $num_of_ace--;
+        }
+
+        return $score;
+    }
+
     // 게임 시작
-    $game = new Blackjack();
-    $game->start();
-?>
+    public function start_game()
+    {
+        echo "Welcome to BlackJack!\n\n";
+
+        // 카드 2장씩 받기
+        $this->user_cards[] = $this->draw_card();
+        $this->dealer_cards[] = $this->draw_card();
+        $this->user_cards[] = $this->draw_card();
+        $this->dealer_cards[] = $this->draw_card();
+
+        $user_score = $this->calculate_score( $this->user_cards );
+        $dealer_score = $this->calculate_score( $this->dealer_cards );
+
+        // 유저 블랙잭
+        if( $user_score == 21 )
+        {
+            echo "User has BlackJack!\nUser Cards: ".implode( ", ", $this->user_cards )."\n\nUser wins!";
+			exit;
+		}
+	
+		// 딜러 블랙잭
+		if( $dealer_score == 21 )
+		{
+			echo "Dealer has BlackJack!\nUser Cards: ".implode( ", ", $this->user_cards )."\n\nDealer wins!";
+			exit;
+		}
+	
+		// 유저가 버스트인 경우
+		if( $user_score > 21 )
+		{
+			echo "User is busted!\nUser Cards: ".implode( ", ", $this->user_cards )."\n\nDealer wins!";
+			exit;
+		}
+	
+		// 딜러가 버스트인 경우
+		if( $dealer_score > 21 )
+		{
+			echo "Dealer is busted!\nUser Cards: ".implode( ", ", $this->user_cards )."\n\nUser wins!";
+			exit;
+		}
+	
+		// 카드 합 비교
+		if( $user_score > $dealer_score )
+		{
+			echo "User score > Dealer score!\nUser Cards: ".implode( ", ", $this->user_cards )."\n\nUser wins!";
+		}
+		elseif( $user_score < $dealer_score )
+		{
+			echo "User score < Dealer score!\nUser Cards: ".implode( ", ", $this->user_cards )."\n\nDealer wins!";
+		}
+		else
+		{
+			echo "It's a tie!\n";
+		}
+		exit;
+	}
+	
+
+	}
+	
+	$obj_bj = new BlackJack();
+	$obj_bj->start_game();
+
+
+// TODO : debug
+// public function debug()
+// {
+// 	var_dump( $this->arr_deck );
+// }
+
+// $obj_bj->debug();
+
+
+//while(true) {
+//	echo '시작';
+//	print "\n";
+//	fscanf(STDIN, "%d\n", $input);        
+//	if($input === 0) {
+//		break;
+//	}
+//	echo $input;
+//	print "\n";
+//}
+//echo "끝!\n";

@@ -52,67 +52,54 @@ class BlackJack
         // 덱 셔플
         shuffle( $this->available_cards );
     }
+    
 
 	// 카드 뽑기
-    // 딜러의 합이 17 이상인 경우 더 이상 카드를 받지 않습니다.
-    // private function draw_card()
-    // {
-    //     $card = array_shift( $this->available_cards );
-    //     $this->used_cards[] = $card;
-    //     return $card;
-    // }
-
-    private function draw_card($participant_cards, $is_dealer = false)
+    private function draw_card()
     {
-        do {
-            $card = array_shift( $this->available_cards );
-        } while (in_array($card, $this->used_cards) || in_array($card, $participant_cards));
-
+        $card = array_shift( $this->available_cards );
         $this->used_cards[] = $card;
-        $participant_cards[] = $card;
+        return $card;
+    }
 
-        if ($is_dealer) {
-            $dealer_total = $this->calculate_score($participant_cards);
-            if (count($participant_cards) > 1 && $dealer_total >= 17) {
-                return $participant_cards;
-            } else {
-                return $this->draw_card($participant_cards, true);
-            }
-        } else {
-            return $participant_cards;
+    // 딜러 카드 뽑기
+    // 딜러의 합이 17 이상인 경우 더 이상 카드를 받지 않습니다.
+    private function dealer_draw()
+    {
+        $dealer_score = $this->calculate_score( $this->dealer_cards );
+        if( $dealer_score < 17 ) {
+            $this->dealer_cards[] = $this->draw_card();
+            $dealer_score = $this->calculate_score( $this->dealer_cards );
         }
     }
 
     // 카드 합 계산
-    private function calculate_score( $cards )
+    private function calculate_score($cards)
     {
         $score = 0;
         $num_of_ace = 0;
-
-        foreach( $cards as $card )
-        {
-            $num = substr( $card, 0, -3 );
-            if( $num == 'A' )
-            {
+    
+        foreach ($cards as $card) {
+            if ($card === null) {
+                continue;
+            }
+    
+            $num = substr($card, 0, -3);
+            if ($num == 'A') {
                 $num_of_ace++;
                 $score += 11;
-            }
-            else if( $num == 'K' || $num == 'Q' || $num == 'J' || $num == '10' )
-            {
+            } else if ($num == 'K' || $num == 'Q' || $num == 'J' || $num == '10') {
                 $score += 10;
-            }
-            else
-            {
-                $score += intval( $num );
+            } else {
+                $score += intval($num);
             }
         }
-
-        while( $score > 21 && $num_of_ace > 0 )
-        {
+    
+        while ($score > 21 && $num_of_ace > 0) {
             $score -= 10;
             $num_of_ace--;
         }
-
+    
         return $score;
     }
 
@@ -132,6 +119,7 @@ class BlackJack
 
         // 처음 뽑은 2장의 카드를 보여주기
         echo "User Cards : ".implode( ", ", $this->user_cards )."\n";
+        // echo "Dealer Cards: ".implode( ", ", $this->dealer_cards )."\n"; // debug용으로 딜러 카드 표시함.
 
         // 유저 블랙잭
         if( $user_score == 21 )
@@ -176,44 +164,50 @@ class BlackJack
             if( $input == '1' )
             {
                 $this->user_cards[] = $this->draw_card();
+                $this->dealer_cards[] = $this->dealer_draw();
                 $user_score = $this->calculate_score( $this->user_cards );
                 $dealer_score = $this->calculate_score( $this->dealer_cards );
                 
                 if( $user_score == 21 )
                 {
-                    echo "\nUser Cards: ".implode( ", ", $this->user_cards )."\nUser score = 21!\nUser wins!";
-                    echo "\nDealer Cards: ".implode( ", ", $this->dealer_cards )."\n";
+                    echo "Dealer Cards: ".implode( ", ", $this->dealer_cards )."\nUser Cards: ".implode( ", ", $this->user_cards )."\nUser score = 21!\nUser wins!";
                     exit;
                 }
                 elseif( $user_score > 21 )
                 {
-                    echo "\nUser Cards: ".implode( ", ", $this->user_cards )."\nUser is busted!\nDealer wins!";
-                    echo "\nDealer Cards: ".implode( ", ", $this->dealer_cards )."\n";
+                    echo "Dealer Cards: ".implode( ", ", $this->dealer_cards )."\nUser Cards: ".implode( ", ", $this->user_cards )."\nUser is busted!\nDealer wins!";
+                    exit;
+                }
+                elseif( $dealer_score > 21 )
+                {
+                    echo "Dealer Cards: ".implode( ", ", $this->dealer_cards )."\nUser Cards: ".implode( ", ", $this->user_cards )."\nDealer is busted!\nUser wins!";
                     exit;
                 }
                 else
                 {
                     echo "\nUser Cards: ".implode( ", ", $this->user_cards )."\n";
-                    echo "\nDealer Cards: ".implode( ", ", $this->dealer_cards )."\n";
+                    // echo "\nDealer Cards: ".implode( ", ", $this->dealer_cards )."\n"; // debug용으로 딜러 카드 표시함.
                 }
             }
             elseif( $input == '2' )
             {
                 if( $user_score > $dealer_score )
                 {
-                    echo "\nUser Cards: ".implode( ", ", $this->user_cards )."\nUser score > Dealer score!\nUser wins!";
-                    echo "\nDealer Cards: ".implode( ", ", $this->dealer_cards )."\n";
+                    echo "Dealer Cards: ".implode( ", ", $this->dealer_cards )."\nUser Cards: ".implode( ", ", $this->user_cards )."\nUser score is higher than Dealer score!\nUser wins!";
                 }
                 elseif( $user_score < $dealer_score )
                 {
-                    echo "\nUser Cards: ".implode( ", ", $this->user_cards )."\nUser score < Dealer score!\nDealer wins!";
-                    echo "\nDealer Cards: ".implode( ", ", $this->dealer_cards )."\n";
+                    echo "Dealer Cards: ".implode( ", ", $this->dealer_cards )."\nUser Cards: ".implode( ", ", $this->user_cards )."\nUser score is lower than Dealer score!\nDealer wins!";
                 }
                 else
                 {
-                    echo "Dealer Cards: ".implode( ", ", $this->dealer_cards )."\nIt's a tie!\n";
+                    echo "Dealer Cards: ".implode( ", ", $this->dealer_cards )."\nUser Cards: ".implode( ", ", $this->user_cards )."\nIt's a tie!";
                 }
                 exit;
+            }
+            else
+            {
+                echo "You have entered an incorrect number. Please try again.\n";
             }
     
             $input = readline("Enter 1 to draw a card, 2 to compare the scores or 0 to end the game: ");

@@ -1,23 +1,32 @@
 <?php
-$hello = "Hello";
-$happy = "Happy";
-$hello_1 = "I am always Hello.";
+// "I am always Hello."에서 "Hello"를 "Happy"로 바꾸어 출력하는
+// 프로그램을 구현해 주세요.
+$str_all = "I am always Hello.";
+$str_expl = explode("Hello", $str_all);
+$str_impl = implode("Happy", $str_expl);
+//echo $str_impl;
 
-// $hello_2 = str_replace( $hello, $happy, $hello_1);
-// echo $hello_2;
+//var_dump($str_expl);
 
-// $hello_3 = explode($hello, $hello_1);
+// 함수명 : my_str_replace
+// 리턴값 : String  $result_str
+$str = "I am always Hello.";
+//function my_str_replace($str)
+//{
+//	$str_expl = explode("Hello",$str);
+//	$result_str = implode("Happy",$str_expl);
+//	return $result_str;
+//}
+//echo my_str_replace($str);
 
-// $happy_1 = implode($happy, $hello_3);
-// echo $happy_1;
-
-function my_str_replace ($h1, $rep_hello, $rep_happy)
+// 재사용성 개선
+function my_str_replace($pram_str, $param_separator, $param_ch)
 {
-    $hello_4 = explode($rep_hello, $h1);
-    $result_str = implode($rep_happy, $hello_4);
-    return $result_str;
+	$arr_expl = explode($param_separator,$pram_str);
+	$result_str = implode($param_ch,$arr_expl);
+	return $result_str;
 }
+//echo my_str_replace($str, "am", "Apple");
 
-echo my_str_replace ($hello_1, $hello, $happy);
-
-?>
+// PHP 함수
+echo str_replace("Hello", "Happy", $str);

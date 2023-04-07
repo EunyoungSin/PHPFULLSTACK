@@ -1,56 +1,38 @@
 <?php
-/* $arr_base = array(1,2,3,4,6);
 
-function my_len ($array)
+// 1. 배열의 길이를 반환하는 my_len() 함수를 작성하시오.
+$arr_base = array(1, 2, 3, 4, 5);
+
+//echo my_len($arr_base);
+
+function my_len($arr_len)
 {
-    $result = 0;
-
-    foreach ( $array as $val )
-    {
-        $result++;
-    }
-    return $result;
+	$result = 0;
+	foreach ($arr_len as $val)
+	{
+		$result += 1;
+	}
+	return $result;
 }
 
-echo my_len($arr_base);
-
+// 별찍기를 함수로 만들어봅시다.
 $in_num = 6;
 for( $for1 = 1; $for1 <= $in_num; $for1++ )
-{
-    for ( $for2 = 0; $for2 < $for1; $for2++ )
-    {
-        echo "*";
-    }
-    echo "\n";
-} */
-
-function print_stars ($in_num)
-{
-    for ( $j = 1; $j <= $in_num; $j++ )
-    {
-        for ( $i = 0; $i < $j; $i++ )
-        {
-            echo "*";
-        }
-        echo "\n";
-    }
+{ 
+	for( $for2 = 0; $for2 < $for1; $for2++ )
+	{ 
+		echo "*";
+	}
+	echo "\n";
 }
 
-function print_star_rect ($in_num)
-{
-    for( $j = 0; $j < $in_num; $j++ )
-    {
-        for ( $i = 0; $i < $in_num; $i++ )
-        {
-            echo "*";
-        }
-        echo "\n";
-    }
-}
+print_star_rect(3); 
+//*** (개행)
+//*** (개행)
+//*** (개행)
 
-$in_num = 5;
-
-echo print_stars($in_num);
-echo print_star_rect($in_num);
-
-?>
+print_star_rect(4); 
+//**** (개행)
+//**** (개행)
+//**** (개행)
+//**** (개행)

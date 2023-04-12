@@ -19,13 +19,16 @@
 
 	//echo "점심메뉴\n탕수육 8,000\n짜장면 6,000\n짬뽕 6,000";
 
-	$tang = "탕수육 8,000\n";
-	$zza = "짜장면 6,000\n";
-	$zzam = "짬뽕 6,000";
+	// $tang = "탕수육 8,000\n";
+	// $zza = "짜장면 6,000\n";
+	// $zzam = "짬뽕 6,000";
 
-	echo "점심메뉴\n";
-	echo $tang;
-	echo $zza;
-	echo $zzam;
+	// echo "점심메뉴\n";
+	// echo $tang;
+	// echo $zza;
+	// echo $zzam;
+
+	$page_num=1;
+	echo $page_num-1; 
 
 ?>

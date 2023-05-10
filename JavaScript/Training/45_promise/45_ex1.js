@@ -35,7 +35,7 @@ function delay(ms) {
 }
 
 delay(3000)
-.then(function() {
+.then(() => {
     console.log(A);
     return delay(2000);
 })

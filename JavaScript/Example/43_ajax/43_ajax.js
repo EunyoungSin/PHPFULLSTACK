@@ -51,3 +51,8 @@ const initialURL = 'https://picsum.photos/v2/list?page=1&limit=5'; // 초기 이
     .then(res => {return res.json()})
     .then(data => makeList(data))
     .catch(console.log);
+
+// ----------  참조  -----------
+//1. 직렬화(Serialization)
+// 	데이터 구조나 오브젝트 상태를 동일 혹은 다른 컴퓨터 환경에 저장하고,
+// 	나중에 재구성 할 수 있는 포맷으로 변환하는 과정

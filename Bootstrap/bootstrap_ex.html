@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <title>bootstrap</title>
+</head>
+<body>
+    <!-- 네비게이션 바 -->
+    <nav class="navbar navbar-dark" style="background-color: rgb(189, 173, 226);">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown
+                    </a>
+                <ul class="dropdown-menu dropdown-menu-dark" style="background-color: rgb(189, 173, 226); border: none;">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 카드 -->
+    <div class="container">
+        <div class="row row-xxl-4 row-cols-lg-3">
+            <div class="col d-flex justify-content-center mt-3 mb-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://img.myshopline.com/image/store/2004571493/1676267689466/-06_58.jpeg?w=800&h=800" class="card-img-top" alt="tshirts" style="height: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">토끼 티셔츠</h5>
+                        <p class="card-text">귀여운 토끼 그림이 그려진 반팔티</p>
+                        <!-- Modal -->
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            구매하기
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-center mt-3 mb-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://sitem.ssgcdn.com/25/79/68/item/1000350687925_i1_1100.jpg" class="card-img-top" alt="pants" style="height: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">연청바지</h5>
+                        <p class="card-text">여름은 연청!</p>
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            구매하기
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-center mt-3 mb-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://bullang.com/web/product/extra/small/202303/685ed57c4ef1ddedc12dc95711a47d81.jpg" class="card-img-top" alt="skirts" style="height: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">카고 미니스커트</h5>
+                        <p class="card-text">힙한 카고 미니스커트</p>
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            구매하기
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-center mt-3 mb-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://m.gifteabox.com/web/product/big/202102/52dca4d5f297d60f267714ab480579f4.jpg" class="card-img-top" alt="blouse" style="height: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">퍼프소매 블라우스</h5>
+                        <p class="card-text">귀여운 퍼프소매의 블라우스</p>
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            구매하기
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-center mt-3 mb-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://174.co.kr/web/product/big/202008/86aa482a30ef30262ebed9f6adca399c.jpg" class="card-img-top" alt="slax" style="height: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">부츠컷 슬랙스</h5>
+                        <p class="card-text">포멀한 슬랙스</p>
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            구매하기
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-center mt-3 mb-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://i.pinimg.com/736x/16/a1/16/16a116876eb8e72b7533218857fd81e2.jpg" class="card-img-top" alt="onepiece" style="height: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">뷔스티에 원피스</h5>
+                        <p class="card-text">무난하고 깔끔한 하객용 원피스</p>
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            구매하기
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="border: none;">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">상품을 구매하시겠습니까?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer" style="border: none;">
+            <button type="button" class="btn btn-secondary" style="background-color: rgb(159, 159, 187);" data-bs-dismiss="modal">취소</button>
+            <button type="button" class="btn btn-secondary" style="background-color: rgb(134, 134, 243);">장바구니에 담기</button>
+            <button type="button" class="btn btn-secondary" style="background-color: rgb(248, 179, 208);">즉시 구매</button>
+        </div>
+    </div>
+    </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,15 +1,17 @@
 <template>
     <!-- 네비 -->
     <div class="nav">
-        <a>홈</a>
-        <a>상품</a>
-        <a>기타</a>
+        <a v-for="item in navList" :key="item">{{ item }}</a>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'App',
+    name: 'navi',
+    props: {
+        product1: String,
+        navList: Array,
+    }
 }
 </script>
 

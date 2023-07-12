@@ -8,6 +8,7 @@
         <img class="logo" alt="Vue logo" src="./assets/logo3.png">
       </li>
       <li v-if="$store.state.tabFlg == 1" @click="$store.commit('changeTabFlg', 2)" class="header-button header-button-right">다음</li>
+      <li v-if="$store.state.tabFlg == 2" @click="$store.dispatch('writeContent');" class="header-button header-button-right">작성</li>
     </ul>
   </div>
 
@@ -21,7 +22,9 @@
   <div class="footer">
     <div class="footer-button-store">
       <label for="file" class="label-store">+</label>
+      <!-- label:file + 눌렀을 때 파일 업로드 창이 뜸 -->
       <input @change="updateImg" accept="image/*" type="file" id="file" class="input-file">
+      <!-- @change:이미지 변화가 생겼을 때 -->
     </div>
   </div>
 
@@ -37,11 +40,12 @@ export default {
     this.$store.dispatch('getMainList');
   },
   methods: {
-    updateImg(e) {
+    updateImg(e) { // e: event
       let file = e.target.files;
       let imgUrl = URL.createObjectURL(file[0]);
       this.$store.commit('changeImgUrl',imgUrl);
       this.$store.commit('changeTabFlg',1);
+      this.$store.commit('changePostImg',file[0]);
       e.target.value = ''; // 이벤트 타겟 밸류 초기화
     }
   },

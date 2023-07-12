@@ -1,6 +1,6 @@
 <template>
     <div class="post" v-for="item in $store.state.boardData" :key="item">
-        <div class="post-img" :style="{backgroundImage : `url('${item.img}')`}"></div>
+        <div class="post-img" :class="item.filter" :style="{backgroundImage : `url('${item.img}')`}"></div>
             <!-- <p><img :src="item.img" alt=""></p> -->
             <!-- <img src="../assets/choco.png"> -->
         <div class="post-content">

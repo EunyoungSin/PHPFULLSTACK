@@ -10,6 +10,14 @@ class JWT {
     protected $alg = 'SHA256';
     protected $secret_key = 'php506';
 
+    protected $error_base = [
+        "E01" => "Not set Token"
+        ,"E02" => "Unknown from Token"
+        ,"E03" => "Unauthorization Token"
+        ,"E04" => "Expirted Token"
+        ,"E99" => "System Error"
+    ];
+
     /*
         JWT 생성
     */
@@ -51,12 +59,20 @@ class JWT {
     public function chkToken($token) {
         Log::debug('------ chkToken Start ------');
         try {
+            // 토큰 디코딩
+            $decode_token = base64_decode();
+
             // 토큰을 분리
             $arr_token = explode('.', $token);
 
             $header = $arr_token[0];
             $payload = $arr_token[1];
             $signature = $arr_token[2];
+            
+            {
+                
+            }
+
             Log::debug('signature : ' . $signature);
 
             // 토큰 유효기간 확인

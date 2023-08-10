@@ -9,7 +9,7 @@
       <br>
       로그인한 아이디 : {{ user_id }}
       <br>
-      <br>f
+      <br>ff
       <button @click="logout()">로그아웃</button>
     </div>
     <div v-else>

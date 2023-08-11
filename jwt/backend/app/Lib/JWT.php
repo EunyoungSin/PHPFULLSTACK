@@ -36,13 +36,11 @@ class JWT {
         Log::debug('header : ' . $header);
 
         // payload 작성 (user정보나 필요한 정보가 담겨있는 부분)
-        // 세션에 비해 탈취당하기 쉬워서 토큰에는 개인정보를 담지 않고 유효기간을 셋팅함
-        // 인가 절차의 승인을 다시 받는데 그게 리플레쉬 토큰. 액세스 토큰, 리플레쉬 토큰 둘 다 보관
         $iat = time(); // 발급시간
         $exp = $iat + 60; // 유효기간
         $payload_json = json_encode([
             'id'    => $data['id']
-            ,'iat'  => $iat // issue at
+            ,'iat'  => $iat
             ,'exp'  => $exp
         ]);
 

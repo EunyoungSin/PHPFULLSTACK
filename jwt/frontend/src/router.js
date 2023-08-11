@@ -4,15 +4,15 @@ import Login from './components/LoginComponent.vue';
 
 const routes = [
     {
-        path: "/main",
-        name: "main",
+        path: '/main',
+        name: 'main',
         component: Main
     },
     {
-        path: "/login",
-        name: "login",
+        path: '/login',
+        name: 'login',
         component: Login
-    },
+    }
 ];
 
 const router = createRouter({

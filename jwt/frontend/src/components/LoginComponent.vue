@@ -2,7 +2,6 @@
     <div>
         <h1>LoginComponent</h1>
         <input type="text" name="id" v-model="id">
-        {{ id }}
         <button @click="btn();">Login</button>
     </div>
 </template>
@@ -16,9 +15,9 @@ export default {
     },
     methods: {
         btn() {
-            this.dispatch("login", {id: this.id});
-        }
-    }
+            this.dispatch('login', this.id);
+        },
+    },
 }
 </script>
 <style>
